@@ -1,0 +1,8 @@
+#Tue Jan 09 23:24:08 CET 2018
+end=1515536647772
+uuid=ExtractFeaturesTask-Train-NamedEntitySequenceDemoTrainTest-cd1e6535-f58b-11e7-9825-83dc69cdd251
+type=org.dkpro.tc.core.task.ExtractFeaturesTask-Train-NamedEntitySequenceDemoTrainTest
+begin=1515536645128
+import.input=task-id\://InitTask-Train-NamedEntitySequenceDemoTrainTest-c98b2c52-f58b-11e7-9825-83dc69cdd251/preprocessorOutputTrain
+duration=2s
+import.meta=task-id\://MetaInfoTask-NamedEntitySequenceDemoTrainTest-cc92ee14-f58b-11e7-9825-83dc69cdd251/meta

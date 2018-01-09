@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<typeSystemDescription xmlns="http://uima.apache.org/resourceSpecifier">
+    <name>LST</name>
+    <description/>
+    <version>1.0</version>
+    <vendor/>
+  <imports>
+    <import location="Chunk.xml"/>
+  </imports>
+  <types>
+    <typeDescription>
+      <name>type.LST</name>
+      <description/>
+      <supertypeName>type.Chunk</supertypeName>
+    </typeDescription>
+  </types>
+</typeSystemDescription>

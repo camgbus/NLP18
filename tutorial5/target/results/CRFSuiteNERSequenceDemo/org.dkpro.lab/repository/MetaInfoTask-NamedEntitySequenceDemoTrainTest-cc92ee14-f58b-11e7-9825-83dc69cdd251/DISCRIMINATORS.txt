@@ -1,0 +1,13 @@
+#Tue Jan 09 23:24:04 CET 2018
+org.dkpro.tc.core.task.InitTask|threshold=null
+org.dkpro.tc.core.task.MetaInfoTask|featureMode=sequence
+org.dkpro.tc.core.task.MetaInfoTask|filesRoot=null
+org.dkpro.tc.core.task.MetaInfoTask|featureSet=[extractors.HasPoint| uniqueFeatureExtractorName, HasPoint46723181262302], [extractors.IsLocation| uniqueFeatureExtractorName, IsLocation46723181614741]
+org.dkpro.tc.core.task.InitTask|developerMode=false
+org.dkpro.tc.core.task.InitTask|readerTest=[de.tudarmstadt.ukp.teaching.nlp4web.tutorial.tut5.ner.NERCoNLLReader, sourceEncoding\=UTF-8, useDefaultExcludes\=true, includeHidden\=false, language\=en, sourceLocation\=src/main/resources/data/nlp4web_ml_ner/test, patterns\=[+]*.dev]
+org.dkpro.tc.core.task.InitTask|readerTrain=[de.tudarmstadt.ukp.teaching.nlp4web.tutorial.tut5.ner.NERCoNLLReader, sourceEncoding\=UTF-8, useDefaultExcludes\=true, includeHidden\=false, language\=en, sourceLocation\=src/main/resources/data/nlp4web_ml_ner/train, patterns\=[+]*.train]
+org.dkpro.tc.core.task.InitTask|featureSet=[extractors.HasPoint| uniqueFeatureExtractorName, HasPoint46723181262302], [extractors.IsLocation| uniqueFeatureExtractorName, IsLocation46723181614741]
+org.dkpro.tc.core.task.InitTask|learningMode=singleLabel
+org.dkpro.tc.core.task.InitTask|featureMode=sequence
+org.dkpro.tc.core.task.MetaInfoTask|recordContext=false
+org.dkpro.tc.core.task.MetaInfoTask|files_training=null
