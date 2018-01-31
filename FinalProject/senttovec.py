@@ -27,7 +27,7 @@ def getSentenceVector(Tokens, Sent2vec_PATH, model_PATH):
     Vector_path = os.path.abspath(Sent2vec_PATH +'./'+timestamp+'_vector.txt')
     call(fasttext_exec_path +
          ' print-sentence-vectors '+
-         MODEL +
+         model_PATH +
          ' < ' + Sentence_path + 
          ' > ' + Vector_path, shell=True)
     vector_reader = open(Vector_path,"r")
