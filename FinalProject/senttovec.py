@@ -3,6 +3,7 @@ import time
 import sys
 from subprocess import call
 import numpy as np
+from scipy import spatial
 
 '''
 param class tokens: list of most representative tokens for a category[str1, str2, ...]
@@ -39,7 +40,20 @@ def getSentenceVector(Tokens, Sent2vec_PATH, model_PATH):
 
 
 '''
-param v1: vector rep
-param v2: vector rep
-result: distane between vectors
+param SentenceVector1: vector rep
+param SentenceVector2: vector rep
+result: cosine similarty between vectors
 '''
+'''
+Test : 
+Sent2vec_PATH = "/Volumes/TOSHIBA_EXT/sent2vec-master/"
+model_PATH = Sent2vec_PATH + "wiki_unigrams.bin"
+Tokens1 = ["Auster", "delves", "deeply", "into", "this", "notion", "while", "leaving"]
+Tokens2 = ["At", "least", "that", "what", "happened", "in", "my", "case"]
+vec1 = getSentenceVector(Tokens1, Sent2vec_PATH, model_PATH)
+vec2 = getSentenceVector(Tokens2, Sent2vec_PATH, model_PATH)
+SentenceVectorDistane(vec1, vec2)
+'''
+
+def SentenceVectorDistane(SentenceVector1, SentenceVector2):
+    return 1 - spatial.distance.cosine(SentenceVector1, SentenceVector2)
