@@ -11,11 +11,16 @@ class DataSet:
 		for c in categories:
 			self.classDict[c] = list() 
 		dataIndex = 0
+		self.ids = dict()
 		for f in filelist:
+			# Posicion of sentence in file
+			fileIndex = 0
+			filename = f[5:-4]
 			for (s,c) in reader.read_file(f, categories):
 				self.data.append((s,c))
 				self.classDict[c].append(dataIndex)
 				dataIndex += 1
-		
+				self.ids[tuple(s)] = filename+'_'+str(fileIndex)
+				fileIndex += 1
 			
 		
