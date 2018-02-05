@@ -7,6 +7,7 @@ from scipy import spatial
 import pickle
 from itertools import chain
 import freq_weights as fw
+import warnings
 
 class SentToVec:
 	def __init__(self, Sent2vec_PATH, model_PATH, nr_tfidf_vec, exp_name):
@@ -59,7 +60,12 @@ class SentToVec:
 		vec2 = getSentenceVector(Tokens2, Sent2vec_PATH, model_PATH)
 		SentenceVectorDistane(vec1, vec2)
 		"""
-		return 1 - spatial.distance.cosine(SentenceVector1, SentenceVector2)
+		# Class representation is vector of 0s because there were no instances
+		# In this case, a similitude of 0 is returned
+		if all(v == 0 for v in SentenceVector2):
+			return 0
+		else:
+			return 1 - spatial.distance.cosine(SentenceVector1, SentenceVector2)
 
 	def save_vector_rep(self, data_set):
 		"""

@@ -9,7 +9,7 @@ class DataSet:
 		# list of indexes in 'data' that belong to that class
 		self.classDict = dict()
 		for c in categories:
-			self.classDict[c] = list() 
+			self.classDict[c] = list()
 		dataIndex = 0
 		self.ids = dict()
 		for f in filelist:

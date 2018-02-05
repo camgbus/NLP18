@@ -55,31 +55,28 @@ def get_states(data, predictions, categories):
 	return state
 
 def precision(tp, fp):
-	if tp > 0:
+	if tp+fp > 0:
 		return tp/(tp+fp)
 	else:
-		warnings.warn("No tp of class")
 		return 0
 
 def recall(tp, fn):
-	if tp > 0:
+	if tp+fn > 0:
 		return tp/(tp+fn)
 	else:
-		warnings.warn("No tp of class")
 		return 0
 
 def f1(tp, fp, fn):
-	if tp > 0:
+	if (precision(tp, fp)+recall(tp, fn)) > 0:
 		return (2*precision(tp, fp)*recall(tp, fn))/(precision(tp, fp)+recall(tp, fn))
 	else:
-		warnings.warn("No tp of class")
 		return 0
 
 def print_results(micro_f1, macro_f1, d, categories, exp_name=''):
 	'''
 	Prints evaluation in an excel table in the 'results' directory
 	'''
-	file_name = 'results/'+exp_name+'_'+time.strftime("%d-%H-%M")+'.xlsx'
+	file_name = 'results/'+exp_name+'.xlsx'#+'_'+time.strftime("%d-%H-%M")+'.xlsx'
 	workbook = xlsxwriter.Workbook(file_name)
 	worksheet = workbook.add_worksheet()
 	worksheet.set_landscape()
@@ -112,7 +109,7 @@ def print_results(micro_f1, macro_f1, d, categories, exp_name=''):
 		col += 1
 	workbook.close()
 	
-def avg_result_tables(filelist, categories):
+def avg_result_tables(filelist, categories, exp_name=''):
 	'''
 	Averages results tables
 	'''
@@ -139,5 +136,5 @@ def avg_result_tables(filelist, categories):
 		d[c][0] = d[c][0]/n
 		d[c][1] = d[c][1]/n
 		d[c][2] = d[c][2]/n
-	print_results(micro_F1/n, macro_F1/n, d, categories, exp_name='avg')
+	print_results(micro_F1/n, macro_F1/n, d, categories, exp_name='CV_'+exp_name)
 
